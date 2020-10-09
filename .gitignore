@@ -1,0 +1,4 @@
+**/media/
+**/__pycache__/
+*.mp4
+**/.DS_store
