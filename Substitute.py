@@ -12,42 +12,6 @@ class Substitute(Scene):
         In_g.to_edge(UP)
         In_g.scale(0.9)
 
-        # INITILIASE COIL OBJECT AND LABEL
-
-        # coil = SVGMobject("/Volumes/Transcend/manim/myanims/media/designs/svg_images/Coil.svg") #Create Coil Object
-        # coil.scale(1.4)
-        # coil.to_edge(RIGHT,buff=2.4)
-
-        # coil_text[0].next_to(coil,DOWN,buff=0.5)
-        # coil_text[1].next_to(coil_text,DOWN,buff=SMALL_BUFF)
-
-        # coil_text_vg = VGroup(coil_text[0],coil_text[1]).arrange(DOWN,buff=SMALL_BUFF).next_to(coil,DOWN,buff=0.5)
-        # coil.generate_target()
-        # coil.target.to_edge(RIGHT,buff=2.4)
-
-        # END INITIALISING COIL OBJECT AND LABEL
-
-        # COIL BRACES START
-
-        # coil_bD = Brace(coil,DOWN,buff=SMALL_BUFF)                                      #
-        # coil_bD.scale(0.2)
-        # coil_bD.shift(RIGHT*0.75)
-        # thickness = TextMobject('\\emph{thickness}','\\emph{of}','\\emph{string}').scale(0.8)
-        # thickness_vg = VGroup(*thickness).arrange(DOWN,SMALL_BUFF)
-        # thickness_vg.next_to(coil_bD,DOWN,buff=SMALL_BUFF)
-
-        # coil_bR = Brace(coil,RIGHT,buff=SMALL_BUFF)
-        # no_of_turns = TextMobject("\\emph{no of}","\\emph{turns}").scale(0.8)
-        # no_of_turns_vg = VGroup(*no_of_turns).arrange(DOWN,SMALL_BUFF)
-        # no_of_turns_vg.next_to(coil_bR,RIGHT,buff=SMALL_BUFF)
-
-        # coil_bL = Brace(coil,LEFT,buff=SMALL_BUFF)
-        # length = TextMobject('\\emph{length}','\\emph{of}','\\emph{coil}').scale(0.8)
-        # length_of_coil_vg = VGroup(*length).arrange(DOWN,buff=SMALL_BUFF)
-        # length_of_coil_vg.next_to(coil_bL,LEFT,buff=SMALL_BUFF)
-
-        # COIL BRACES END
-
         formula = TexMobject("\\emph{Thickness}", '\\emph{of}', '\\emph{string}',
                              '=', '{\\emph{length of coil}', '\\over', '\\emph{no. of turns}}')
         formula.scale(1.5)
