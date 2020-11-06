@@ -1,12 +1,14 @@
-from manimlib.imports import *
+
+from manim import *  # noqa: F403
 
 
 class IntroExplain(Scene):
     def construct(self):
 
         # intro String initialisation
-        Intro = TextMobject(
-            '\\emph{Formula for finding thickness of thread: }', '\\emph{(Indirectly)}')
+        Intro = Tex(
+            '\\emph{Formula for finding thickness of thread: }',
+            '\\emph{(Indirectly)}')
 
         In_g = VGroup(Intro[0], Intro[1]).arrange(DOWN, buff=SMALL_BUFF)
 
@@ -23,10 +25,11 @@ class IntroExplain(Scene):
 
         # Create Coil SVG Object
         coil = SVGMobject(
-            "/Volumes/Trancend/manim/myanims/media/designs/svg_images/Coil.svg")
+            '/Users/Adhu/Desktop/Scripts/python/Animations/'
+            'Thickness_of_string/media/designs/svg_images/Coil.svg')
         coil.scale(1.4)
 
-        coil_text = TextMobject(
+        coil_text = Tex(
             'String Wrapped around a cylinder', 'i.e a coil').scale(0.75)
 
         coil_text_vg = VGroup(coil_text[0], coil_text[1]).arrange(
@@ -47,20 +50,20 @@ class IntroExplain(Scene):
 
         coil_bD = Brace(coil, DOWN, buff=SMALL_BUFF)
         coil_bD.scale(0.2)
-        coil_bD.shift(RIGHT*0.75)
-        thickness = TextMobject(
+        coil_bD.shift(RIGHT * 0.75)
+        thickness = Tex(
             '\\emph{thickness}', '\\emph{of}', '\\emph{string}')
         thickness.scale(0.8)
         thickness_vg = VGroup(*thickness).arrange(DOWN, SMALL_BUFF)
         thickness_vg.next_to(coil_bD, DOWN, buff=SMALL_BUFF)
 
         coil_bR = Brace(coil, RIGHT, buff=SMALL_BUFF)
-        no_of_turns = TextMobject("\\emph{no of}", "\\emph{turns}").scale(0.8)
+        no_of_turns = Tex('\\emph{no of}', '\\emph{turns}').scale(0.8)
         no_of_turns_vg = VGroup(*no_of_turns).arrange(DOWN, SMALL_BUFF)
         no_of_turns_vg.next_to(coil_bR, RIGHT, buff=SMALL_BUFF)
 
         coil_bL = Brace(coil, LEFT, buff=SMALL_BUFF)
-        length = TextMobject(
+        length = Tex(
             '\\emph{length}', '\\emph{of}', '\\emph{coil}').scale(0.8)
         length_of_coil_vg = VGroup(*length).arrange(DOWN, buff=SMALL_BUFF)
         length_of_coil_vg.next_to(coil_bL, LEFT, buff=SMALL_BUFF)
@@ -75,12 +78,16 @@ class IntroExplain(Scene):
 
         # FORMULA START
 
-        formula = TexMobject("\\emph{Thickness}", '\\emph{of}', '\\emph{string}',
-                             '=', '{\\emph{length of coil}', '\\over', '\\emph{no. of turns}}')
+        formula = MathTex('\\emph{Thickness}',
+                          '\\emph{of}',
+                          '\\emph{string}',
+                          '=', '{\\emph{length of coil}',
+                          '\\over',
+                          '\\emph{no. of turns}}')
         formula.scale(1.1)
 
         formula.to_edge(LEFT)
-        formula[0].shift(UP*0.4)
+        formula[0].shift(UP * 0.4)
 
         formula[1].next_to(formula[0], DOWN, buff=SMALL_BUFF)
         formula[2].next_to(formula[1], DOWN, buff=SMALL_BUFF)
@@ -111,7 +118,11 @@ class IntroExplain(Scene):
         self.wait(2)
 
         self.play(*[Uncreate(i) for i in [no_of_turns_vg, thickness_vg,
-                                          length_of_coil_vg, coil_bR, coil_bL, coil_bD, In_g, formula, coil]])
+                                          length_of_coil_vg,
+                                          coil_bR,
+                                          coil_bL,
+                                          coil_bD,
+                                          In_g, formula, coil]])
         self.wait(4)
 
         # MAIN PLAY END
