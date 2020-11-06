@@ -14,11 +14,11 @@ class Substitute(Scene):
         In_g.scale(0.9)
 
         formula = MathTex('\\emph{Thickness}',
-                             '\\emph{of}', '\\emph{string}',
-                             '=',
-                             '{\\emph{length of coil}',
-                             '\\over',
-                             '\\emph{no. of turns}}')
+                          '\\emph{of}', '\\emph{string}',
+                          '=',
+                          '{\\emph{length of coil}',
+                          '\\over',
+                          '\\emph{no. of turns}}')
         formula.scale(1.5)
         formula.shift(RIGHT * 1)
 
@@ -58,11 +58,11 @@ class Substitute(Scene):
         val_answer = round(val_coil_length / val_no_of_turns, 3)
 
         ans_formula = MathTex('\\emph{Thickness}',
-                                 '\\emph{of}',
-                                 '\\emph{string}',
-                                 '=', '{' + str(val_coil_length),
-                                 '\\over', str(val_no_of_turns) + '}',
-                                 f'{val_answer} mm')
+                              '\\emph{of}',
+                              '\\emph{string}',
+                              '=', '{' + str(val_coil_length),
+                              '\\over', str(val_no_of_turns) + '}',
+                              f'{val_answer} mm')
         ans_formula.scale(1.5)
         ans_formula.shift(RIGHT * 1)
 
