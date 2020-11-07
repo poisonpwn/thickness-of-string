@@ -52,7 +52,6 @@ class Substitute(Scene):
         self.play(*[MoveToTarget(i) for i in formula[:4]],
                   *[MoveToTarget(i) for i in formula[4:]])
         self.wait(2)
-
         val_coil_length = 40
         val_no_of_turns = 50
         val_answer = round(val_coil_length / val_no_of_turns, 3)
